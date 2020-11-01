@@ -2,7 +2,6 @@ import { Reducer } from "redux"
 import produce from 'immer'
 
 import { ICartState } from "./types"
-import { iteratorSymbol } from "immer/dist/internal"
 
 const INITIAL_STATE: ICartState = {
     items: []
