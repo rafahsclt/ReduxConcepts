@@ -1,3 +1,9 @@
+export enum ActionTypes {
+    addProductsToCartRequest= 'ADD_PRODUCTS_TO_CARD_REQUEST',
+    addProductsToCartSuccess= 'ADD_PRODUCTS_TO_CARD_SUCCESS',
+    addProductsToCartFailure= 'ADD_PRODUCTS_TO_CARD_FAILURE'
+}
+
 export interface IProduct {
     id: number
     title: string
@@ -11,4 +17,5 @@ export interface ICartItem {
 
 export interface ICartState {
     items: ICartItem[]
+    failedStockCheck: number[]
 }

@@ -6,6 +6,8 @@ import { ICartItem } from '../store/modules/cart/types'
 const Cart: React.FC = () => {
     const cart = useSelector<IState, ICartItem[]>(state => state.cart.items)
 
+    console.log(cart)
+
     return (
         <table>
             <thead>
@@ -17,14 +19,14 @@ const Cart: React.FC = () => {
                 </tr>
             </thead>
             <tbody>
-                {cart.map(item => {
+                {cart.map(item => (
                     <tr key={item.product.id}>
                         <th>{item.product.title}</th>
                         <th>{item.product.price}</th>
                         <th>{item.quantity}</th>
                         <th>{(item.quantity * item.product.price).toFixed(2)}</th>
                     </tr>
-                })}
+                ))}
             </tbody>
         </table>
     )
